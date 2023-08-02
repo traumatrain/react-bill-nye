@@ -2,8 +2,15 @@ import React from 'react';
 import brain from './assets/brain-colorful.svg';
 import flask from '/chemical-science.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [fact, setFact] = useState('This is a fact');
+
+  function getNyeFact() {
+    setFact('Here is another random fact'),
+      console.log('Here is a Bill Nye fact');
+  }
   return (
     <>
       <div>
@@ -14,12 +21,12 @@ function App() {
           <img src={flask} className="logo flask" alt="Erlenmeyer flask logo" />
         </a>
       </div>
-      <h1>Header</h1>
+      <h1>Bill Nye Fact App</h1>
       <div className="action-button">
-        <button>Button</button>
+        <button onClick={getNyeFact}>Get A Random Fact</button>
       </div>
       <div className="fact-container">
-        <p>{/** Display the fetched fact here... */}</p>
+        <p>{fact}</p>
       </div>
     </>
   );
