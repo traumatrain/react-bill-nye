@@ -14,9 +14,9 @@ function App() {
           <img src={flask} className="logo flask" alt="Erlenmeyer flask logo" />
         </a>
       </div>
-      {/** Create a level 1 heading here... */}
+      <h1>Header</h1>
       <div className="action-button">
-        {/** Create a button to fetch a new fact here... */}
+        <button>Button</button>
       </div>
       <div className="fact-container">
         <p>{/** Display the fetched fact here... */}</p>
