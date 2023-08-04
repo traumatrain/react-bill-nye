@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import brain from './assets/brain-colorful.svg';
 import flask from '/chemical-science.svg';
 import './App.css';
@@ -6,6 +6,9 @@ import { useState } from 'react';
 
 function App() {
   const [randomFact, setrandomFact] = useState('');
+  useEffect(() => {
+    showNyeFact();
+  }, []);
   function showNyeFact() {
     fetch('http://localhost:3000/fact')
       .then((data) => {
