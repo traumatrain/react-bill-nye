@@ -5,10 +5,16 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [fact, setFact] = useState('This is a fact');
-  function getNyeFact() {
-    setFact('Here is another Bill Nye Fact'),
-      console.log('Here is a Bill Nye fact');
+  const [randomFact, setrandomFact] = useState('');
+  function showNyeFact() {
+    fetch('http://localhost:3000/fact')
+      .then((data) => {
+        return data.json();
+      })
+      .then(({ randomFact }) => {
+        setrandomFact(randomFact);
+        console.log(randomFact);
+      });
   }
   return (
     <>
@@ -22,10 +28,10 @@ function App() {
       </div>
       <h1>Bill Nye Fact App</h1>
       <div className="action-button">
-        <button onClick={getNyeFact}>Get A Random Fact</button>
+        <button onClick={showNyeFact}>Get A Random Fact</button>
       </div>
       <div className="fact-container">
-        <p>{fact}</p>
+        <p>{randomFact}</p>
       </div>
     </>
   );
