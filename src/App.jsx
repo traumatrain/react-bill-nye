@@ -6,9 +6,8 @@ import { useState } from 'react';
 
 function App() {
   const [fact, setFact] = useState('This is a fact');
-
   function getNyeFact() {
-    setFact('Here is another random fact'),
+    setFact('Here is another Bill Nye Fact'),
       console.log('Here is a Bill Nye fact');
   }
   return (
