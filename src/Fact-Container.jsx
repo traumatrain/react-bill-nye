@@ -7,9 +7,3 @@ export default function FactContainer({ children }) {
     </div>
   );
 }
-
-// another way to do this
-// FactContainer({ children })
-// <p>{children}</p>
-// on App.jsx:
-// <FactContainer>{randomFact}</FactContainer>
