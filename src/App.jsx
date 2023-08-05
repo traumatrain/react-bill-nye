@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import brain from './assets/brain-colorful.svg';
-import flask from '/chemical-science.svg';
 import './App.css';
 import { useState } from 'react';
+import Header from './Header';
+import Button from './Button';
+import FactContainer from './Fact-Container';
 
 function App() {
   const [randomFact, setrandomFact] = useState('');
@@ -22,19 +23,13 @@ function App() {
   return (
     <>
       <div>
-        <a>
-          <img src={brain} className="logo brain" alt="Brain logo" />
-        </a>
-        <a>
-          <img src={flask} className="logo flask" alt="Erlenmeyer flask logo" />
-        </a>
+        <Header />
       </div>
-      <h1>Bill Nye Fact App</h1>
-      <div className="action-button">
-        <button onClick={showNyeFact}>Get A Random Fact</button>
+      <div>
+        <Button />
       </div>
-      <div className="fact-container">
-        <p>{randomFact}</p>
+      <div>
+        <FactContainer randomFact={randomFact} />
       </div>
     </>
   );
