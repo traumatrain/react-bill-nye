@@ -26,10 +26,10 @@ function App() {
         <Header />
       </div>
       <div>
-        <Button />
+        <Button showNyeFact={showNyeFact} />
       </div>
       <div>
-        <FactContainer randomFact={randomFact} />
+        <FactContainer>{randomFact}</FactContainer>
       </div>
     </>
   );
