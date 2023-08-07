@@ -11,7 +11,8 @@
     "prettier"
   ],
   "globals": {
-    "document": true
+    "document": true,
+    "localStorage": true
   },
   "parserOptions": {
     "ecmaVersion": "latest",
