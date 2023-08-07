@@ -1,5 +1,5 @@
 import React from 'react';
-import brain from './assets/brain-colorful.svg';
+import brain from '../assets/brain-colorful.svg';
 import flask from '/chemical-science.svg';
 
 function Header() {
