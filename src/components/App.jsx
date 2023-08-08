@@ -6,6 +6,8 @@ import Header from './Header';
 import Button from './Button';
 import FactContainer from './Fact-Container';
 
+import './App.css';
+
 function App() {
   const [randomFact, showNyeFact] = useNyeFact();
 
