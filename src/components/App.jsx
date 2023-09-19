@@ -1,6 +1,5 @@
 import React from 'react';
 import useNyeFact from '../hooks/useNyeFact';
-import switchTheme from '../hooks/switchTheme';
 
 import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
@@ -12,7 +11,6 @@ import './App.css';
 
 function App() {
   const [randomFact, showNyeFact] = useNyeFact();
-  const [switchTheme, setNewTheme] = switchTheme();
 
   const theme = createTheme({
     palette: {
@@ -25,7 +23,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Card>
         <div>
-          <Toggle onClick={switchTheme} />
+          <Toggle onClick={theme} />
         </div>
         <div className="app-primary">
           <Header />
