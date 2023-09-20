@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useNyeFact from '../hooks/useNyeFact';
-import switchTheme from '../hooks/switchTheme';
 
 import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
@@ -12,21 +11,18 @@ import './App.css';
 
 function App() {
   const [randomFact, showNyeFact] = useNyeFact();
-  const [switchTheme, setNewTheme] = switchTheme();
+  const [darkModeEnabled, setDarkModeEnabled] = useState(true);
 
   const theme = createTheme({
     palette: {
-      // Eventually, this should look something like `mode: darkMode ? 'dark' : 'light'`.
-      mode: 'dark',
+      mode: darkModeEnabled ? 'dark' : 'light',
     },
   });
 
   return (
     <ThemeProvider theme={theme}>
       <Card>
-        <div>
-          <Toggle onClick={switchTheme} />
-        </div>
+        {/*  <Toggle onClick={switchTheme} /> */}
         <div className="app-primary">
           <Header />
           <Button showNyeFact={showNyeFact} />
