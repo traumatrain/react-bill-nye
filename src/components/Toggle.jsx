@@ -1,10 +1,10 @@
 import React from 'react';
 import { ToggleButton } from '@mui/material';
-
-export default function Toggle({ switchTheme }) {
+//should I use createTheme or theme here?
+export default function Toggle({ theme }) {
   return (
     <div className="toggle-button">
-      <ToggleButton onClick={switchTheme}>ON/OFF</ToggleButton>
+      <ToggleButton onClick={theme}>ON/OFF</ToggleButton>
     </div>
   );
 }
