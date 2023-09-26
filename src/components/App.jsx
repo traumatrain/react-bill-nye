@@ -12,26 +12,21 @@ import './App.css';
 function App() {
   const [randomFact, showNyeFact] = useNyeFact();
   const [darkModeEnabled, setDarkModeEnabled] = useState(true);
-  // true = darkmode false = light mode
-  /* boolean makes complete sense, figuring out how to change the boolean to change with toggle is not
-  you had me get rid of {OnClick} and toggle doesn't look like a toggle but like a button. 
-  concerned I'm getting colder */
 
   const theme = createTheme({
     palette: {
       mode: darkModeEnabled ? 'dark' : 'light',
-      //mode: setDarkModeEnabled <-- is this where we're going with this?
     },
   });
-  //should Toggle be ToggleButton or Toggle based on imports from @mui?
   return (
     <ThemeProvider theme={theme}>
       <Card>
         <ToggleButton
           checked={darkModeEnabled}
-          onChange={({ target }) => setDarkModeEnabled(target.checked)} //am I on the right track here?
-          //found the above online @: https://blog.logrocket.com/dark-mode-react-in-depth-guide/
-        />
+          onChange={() => setDarkModeEnabled(!darkModeEnabled)}
+        >
+          🌙
+        </ToggleButton>
         <div className="app-primary">
           <Header />
           <Button showNyeFact={showNyeFact} />
