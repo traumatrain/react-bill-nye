@@ -49,3 +49,9 @@
 .fact-container {
   min-height: 8em;
 }
+
+.toggle-button {
+  position: fixed;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
