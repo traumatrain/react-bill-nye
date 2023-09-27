@@ -9,6 +9,7 @@ import Toggle from './Toggle';
 import './App.css';
 
 function App() {
+  // useState
   const [randomFact, showNyeFact] = useNyeFact();
   const [darkModeEnabled, setDarkModeEnabled] = useState(true);
 
@@ -21,13 +22,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Card>
-        <Toggle
+        <Toggle //dark/light toggle
           darkModeEnabled={darkModeEnabled}
           setDarkModeEnabled={setDarkModeEnabled}
         />
         <div className="app-primary">
           <Header />
-          <Button showNyeFact={showNyeFact} />
+          <Button //fact button
+            showNyeFact={showNyeFact}
+          />
           <FactContainer>{randomFact}</FactContainer>
         </div>
       </Card>
