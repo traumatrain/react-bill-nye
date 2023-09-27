@@ -1,10 +1,15 @@
 import React from 'react';
 import { ToggleButton } from '@mui/material';
-//should I use createTheme or theme here?
-export default function Toggle({ theme }) {
+//!NTS: Don't think it's just the prop I'm missing
+export default function Toggle({ darkModeEnabled, setDarkModeEnabled }) {
   return (
     <div className="toggle-button">
-      <ToggleButton onClick={theme}>ON/OFF</ToggleButton>
+      <ToggleButton
+        checked={darkModeEnabled}
+        onChange={() => setDarkModeEnabled(!darkModeEnabled)}
+      >
+        🌙
+      </ToggleButton>
     </div>
   );
 }
