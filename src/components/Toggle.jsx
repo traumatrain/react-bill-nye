@@ -1,6 +1,7 @@
 import React from 'react';
 import { ToggleButton } from '@mui/material';
-//!NTS: Don't think it's just the prop I'm missing
+
+//Toggle Button
 export default function Toggle({ darkModeEnabled, setDarkModeEnabled }) {
   return (
     <div className="toggle-button">
