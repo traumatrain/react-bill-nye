@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import useNyeFact from '../hooks/useNyeFact';
-//is "ToggleButton" needed?
-import {
-  ThemeProvider,
-  createTheme,
-  Card /*ToggleButton*/,
-} from '@mui/material';
+import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
 import Button from './Button';
 import FactContainer from './Fact-Container';
@@ -22,6 +17,7 @@ function App() {
       mode: darkModeEnabled ? 'dark' : 'light',
     },
   });
+
   return (
     <ThemeProvider theme={theme}>
       <Card>
