@@ -3,7 +3,7 @@ import useNyeFact from '../hooks/useNyeFact';
 import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
 import FactButton from './FactButton';
-import FactContainer from './Fact-Container';
+import FactContainer from './FactContainer';
 import DarkModeToggle from './DarkModeToggle';
 
 import './App.css';
