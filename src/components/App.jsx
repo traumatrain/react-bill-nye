@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
 import Button from './Button';
 import FactContainer from './Fact-Container';
-import Toggle from './Toggle';
+import DarkModeToggle from './DarkModeToggle';
 
 import './App.css';
 
@@ -21,7 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Card>
-        <Toggle
+        <DarkModeToggle
           darkModeEnabled={darkModeEnabled}
           setDarkModeEnabled={setDarkModeEnabled}
         />
