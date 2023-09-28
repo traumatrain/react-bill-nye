@@ -1,5 +1,6 @@
 import React from 'react';
 import { ToggleButton } from '@mui/material';
+import { DarkMode, LightMode } from '@mui/icons-material';
 
 //Toggle Button
 export default function Toggle({ darkModeEnabled, setDarkModeEnabled }) {
@@ -9,7 +10,7 @@ export default function Toggle({ darkModeEnabled, setDarkModeEnabled }) {
         checked={darkModeEnabled}
         onChange={() => setDarkModeEnabled(!darkModeEnabled)}
       >
-        🌙
+        {darkModeEnabled ? <LightMode /> : <DarkMode />}
       </ToggleButton>
     </div>
   );
