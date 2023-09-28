@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useNyeFact from '../hooks/useNyeFact';
 import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
-import Button from './Button';
+import FactButton from './FactButton';
 import FactContainer from './Fact-Container';
 import DarkModeToggle from './DarkModeToggle';
 
@@ -27,7 +27,7 @@ function App() {
         />
         <div className="app-primary">
           <Header />
-          <Button showNyeFact={showNyeFact} />
+          <FactButton showNyeFact={showNyeFact} />
           <FactContainer>{randomFact}</FactContainer>
         </div>
       </Card>
