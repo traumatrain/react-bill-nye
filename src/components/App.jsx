@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import useNyeFact from '../hooks/useNyeFact';
+//import useLocalStorage from '../hooks/useLocalStorage';
 import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
-import Button from './Button';
-import FactContainer from './Fact-Container';
-import Toggle from './Toggle';
+import FactButton from './FactButton';
+import FactContainer from './FactContainer';
+import DarkModeToggle from './DarkModeToggle';
 
 import './App.css';
 
 function App() {
   const [randomFact, showNyeFact] = useNyeFact();
   const [darkModeEnabled, setDarkModeEnabled] = useState(true);
+  //const [] setLocalStorage
 
   const theme = createTheme({
     palette: {
@@ -21,13 +23,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Card>
-        <Toggle
+        <DarkModeToggle
           darkModeEnabled={darkModeEnabled}
           setDarkModeEnabled={setDarkModeEnabled}
         />
         <div className="app-primary">
           <Header />
-          <Button showNyeFact={showNyeFact} />
+          <FactButton showNyeFact={showNyeFact} />
           <FactContainer>{randomFact}</FactContainer>
         </div>
       </Card>
