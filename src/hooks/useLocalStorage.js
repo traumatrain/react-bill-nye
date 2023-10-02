@@ -1,22 +1,25 @@
 import { useState, useEffect } from 'react';
 
-export default function useLocalStorage(darkmodeStorage="local-storage-dark") {
-  const [darkModeEnabled, setDarkModeEnabled] = useState(() =>
-    getLocalStorage(darkmodeStorage="local-storage-dark")
-  );
-
-  useEffect(() => {
-    localStorage.setItem(
-      "local-storage-dark",
-      JSON.stringify(darkModeEnabled, setDarkModeEnabled)
-    );
+export default function useLocalStorage(
+  darkmodeStorage = 'local-storage-dark'
+) {
+  const [darkModeEnabled, setDarkModeEnabled] = useState(() => {
+    return JSON.parse(localStorage.getItem(darkmodeStorage)) ?? true;
   });
 
-  function getLocalStorage() {
-    localStorage.getItem(JSON.parse("local-storage-dark"));
-    if () {
-    }
-  }
+  useEffect(() => {
+    localStorage.setItem(darkmodeStorage, JSON.stringify(darkModeEnabled));
+  }, [darkModeEnabled, darkmodeStorage]);
 
-  return [];
+  //secondary code option use of function getLocalStorage
+  /*function getLocalStorage() {
+    let storedDarkMode = localStorage.getItem(darkmodeStorage);
+    storedDarkMode = JSON.parse(storedDarkMode);
+    if (storedDarkMode === undefined || storedDarkMode === null) {
+      storedDarkMode = true;
+    }
+    return storedDarkMode;
+  }*/
+
+  return [darkModeEnabled, setDarkModeEnabled];
 }
