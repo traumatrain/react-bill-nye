@@ -23,10 +23,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Card>
-        <DarkModeToggle
-          darkModeEnabled={darkModeEnabled}
-          setDarkModeEnabled={setDarkModeEnabled}
-        />
+        <DarkModeToggle {...{ darkModeEnabled, setDarkModeEnabled }} />
         <div className="app-primary">
           <Header />
           <FactButton showNyeFact={showNyeFact} />

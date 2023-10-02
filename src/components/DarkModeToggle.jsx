@@ -1,6 +1,6 @@
 import React from 'react';
 import { ToggleButton } from '@mui/material';
-import { LightMode, DarkMode } from '@mui/icons-material';
+import { DarkMode, LightMode } from '@mui/icons-material';
 
 export default function DarkModeToggle({
   darkModeEnabled,
