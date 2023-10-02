@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useNyeFact from '../hooks/useNyeFact';
+import useLocalStorage from '../hooks/useLocalStorage';
 import { ThemeProvider, createTheme, Card } from '@mui/material';
 import Header from './Header';
 import FactButton from './FactButton';
@@ -10,7 +11,7 @@ import './App.css';
 
 function App() {
   const [randomFact, showNyeFact] = useNyeFact();
-  const [darkModeEnabled, setDarkModeEnabled] = useState(true);
+  const [darkModeEnabled, setDarkModeEnabled] = useLocalStorage();
 
   const theme = createTheme({
     palette: {
